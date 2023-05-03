@@ -1,9 +1,22 @@
 const container = document.querySelector('#container');
 const containerWidth = container.clientWidth;
-let len = 16;
+
+let rangeSelector = document.querySelector('.range');
+let len = rangeSelector.getAttribute('value');
+const cellSize = document.querySelectorAll('.cell-size');
+cellSize.forEach((cell) => {cell.textContent = len});
+
 const getUserValue = document.querySelector('.prompt');
 const clearBtn = document.querySelector('.clear');
 let rgb = 0;
+
+rangeSelector.addEventListener('input', (e)=>{
+    clearCells();
+    len = e.target.value;
+    cellSize.forEach((cell) => {cell.textContent = len});
+    generateCells();
+    addHoverListener();
+})
 
 function generateCells(){
     for(let i = 0; i < len; i++){
@@ -59,20 +72,6 @@ function addHoverListener(){
 
 generateCells();
 addHoverListener();
-
-// Write a func to get cells count from user through a promt on the click of button
-getUserValue.addEventListener('click',  (e)=>{
-    const userInput = prompt("Enter No Of Rows Or Columns (1 to 100)");
-    if(userInput == null) return;
-    if(isNaN(userInput) || (userInput < 1 || userInput > 100)){
-        alert("Incorrect Input. Please Select Between 1 to 100")
-    }
-    else len = userInput;
-    clearCells();
-    generateCells();
-    addHoverListener();
-});
-
 
 // clear btn on click clears canvas
 clearBtn.addEventListener('click', (e)=>{
