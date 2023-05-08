@@ -8,11 +8,14 @@ body{
     height: 100svh;
     display: flex;
     flex-direction: column;
-    background-image: url(./Images/background.png);
-    font-family: Arial, Helvetica, sans-serif;
+    /* justify-content: center; */
+    background-image: url(./Images/background_dark_grey.png);
+    font-family: Helvetica, sans-serif;
 }
 
 .header{
+    margin: auto;
+    margin-bottom: 15px;
     min-height: 140px;
     display: flex;
     justify-content: center;
@@ -20,7 +23,8 @@ body{
 }
 
 .master{
-    margin-top: 15px;
+    /* margin-top: 15px; */
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,6 +59,7 @@ body{
 }
 
 #container{
+    /* margin: auto; */
     box-sizing:content-box;
     outline: 3px solid #eee;
     background-color: darkgray;
@@ -95,8 +100,67 @@ a, a:after, a:hover{
 }
 
 .cell-size, .x{
-    display: ;
     color: white;
 }
+
+
+@media only screen and ((max-height: 850px) or (max-width: 800px)){
+    #container{
+        width: 500px;
+    }
+    .title{
+        font-size: 32px;
+    }
+}
+
+@media only screen and ((max-height: 750px) or (max-width: 600px)) {
+    #container{
+        width: 400px;
+    }
+    .title{
+        font-size: 28px;
+    }
+}
+
+@media only screen and ((max-height: 650px) or (max-width: 450px)) {
+    #container{
+        width: 350px;
+    }
+    .btn-container{
+        gap: 8px;
+        font-size: 14px;
+    }
+    .btn{
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+    .header{
+        min-height: 50px;
+        align-items: end;
+    }
+    .title{
+        font-size: 20px;
+    }
+    .master{
+        gap: 20px;
+        padding-top: 15px;
+    }
+    .footer{
+        min-height: 0;
+    }
+    .github-link{
+        font-size: 14px;
+    }
+}
+
+@media only screen and ((max-height: 480px) or (max-width: 400px)) {
+    #container{
+        width: 300px;
+    }
+    .header{
+        display: none;
+    }
+}
+
 
 
