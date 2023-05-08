@@ -73,7 +73,7 @@ function addHoverListener(){
 function addHoverListener(){
     const cells = document.querySelectorAll('.cell');
     cells.forEach((cell)=>{
-        cell.addEventListener('touchmove', (e)=>{
+        cell.addEventListener('touchstart', (e)=>{
             if(rgb) e.target.style.backgroundColor = `rgb(${rand()}, ${rand()}, ${rand()}`;
             else{
                 const color = getComputedStyle(e.target).backgroundColor;
