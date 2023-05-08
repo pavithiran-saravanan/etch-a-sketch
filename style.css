@@ -4,12 +4,16 @@
     box-sizing: border-box;
     /* outline: 2px solid blue; */
 }
-body{
-    height: 100svh;
+body{ 
+    height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     /* justify-content: center; */
-    background-image: url(./Images/background_dark_grey.png);
+    /* background-image: url(./Images/background_dark_grey.png); */
+    /* background-color: #423685; */ 
+
+    background-color: #050549;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #050549 10px ), repeating-linear-gradient( #6164a355, #6164a3 );
     font-family: Helvetica, sans-serif;
 }
 
@@ -23,7 +27,6 @@ body{
 }
 
 .master{
-    /* margin-top: 15px; */
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -41,19 +44,23 @@ body{
 .btn{
     padding: 5px 20px;
     border: none;
+    background-color: #4c53b8;
     color: white;
-    background-color: #444;
     border-radius: 5px;
     font-weight: 600;
     font-size: 17px;
     outline: none;
     box-shadow: none;
-    border: 2px solid grey;
+    opacity: 100%;
+}
+
+.btn:hover{
+    background-color: #5d69d8;
 }
 
 .rgb-on {
-    border:2px solid black;
-    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    color: white;
+    background-image: linear-gradient(43deg, #C850C0 0%, #4158D0 40%, #FFCC70 100%);
     transition: all 0.1s;
     transform: scale(1.05);
 }
@@ -61,8 +68,8 @@ body{
 #container{
     /* margin: auto; */
     box-sizing:content-box;
-    outline: 3px solid #eee;
-    background-color: darkgray;
+    outline: 3px solid rgb(76, 91, 224);
+    /* background-color: darkgray; */
     width: 600px;
     overflow: hidden;
     display: flex;
@@ -73,12 +80,17 @@ body{
 .title{
     font-size: 35px;
     font-weight: 800;
-    color: grey;
+    color: white;
 }
 a, a:after, a:hover{
     text-decoration: none;
-    color: grey;
+    color: white;
 }
+
+a:hover{
+    text-decoration: underline;
+}
+
 .footer{
     margin-top: auto;
     text-align: center;
@@ -93,6 +105,7 @@ a, a:after, a:hover{
 
 .title-rgb, .github-link-rgb{
     background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    text-shadow: #ffffff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
     -moz-background-clip: text;
@@ -102,6 +115,8 @@ a, a:after, a:hover{
 .cell-size, .x{
     color: white;
 }
+
+
 
 
 @media only screen and ((max-height: 850px) or (max-width: 800px)){
