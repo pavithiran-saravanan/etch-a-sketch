@@ -70,23 +70,6 @@ function addHoverListener(){
     });
 }
 
-function addHoverListener(){
-    const cells = document.querySelectorAll('.cell');
-    cells.forEach((cell)=>{
-        cell.addEventListener('touchstart', (e)=>{
-            if(rgb) e.target.style.backgroundColor = `rgb(${rand()}, ${rand()}, ${rand()}`;
-            else{
-                const color = getComputedStyle(e.target).backgroundColor;
-                const r = color.split(',')[0].split('(')[1] * 0.7;
-                const g = color.split(',')[1] * 0.7;
-                const b = color.split(',')[2].split(')')[0] * 0.7;
-                const targetColor = `rgb(${r}, ${g}, ${b})`;
-                e.target.style.backgroundColor = targetColor;
-            }
-        });
-    });
-}
-
 generateCells();
 addHoverListener();
 
