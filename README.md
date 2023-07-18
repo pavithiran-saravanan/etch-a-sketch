@@ -1,4 +1,4 @@
-# Etch-a-sketch
+# Etch A Sketch
 Web version of a popular kids game Etch-a-sketch. 
 
 # Demo
